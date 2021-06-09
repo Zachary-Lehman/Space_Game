@@ -1,7 +1,9 @@
+//Adds friction
 if (speed > 0){
-	speed -= thrust_spd * 0.1;
+	speed -= thrust_spd * 0.4;
 }
 
+//Allows for room wrapping
 if (x > room_width){
 	x = 0;
 }
@@ -18,30 +20,20 @@ if (y < 0){
 	y = room_height;
 }
 
-if (charge > 0 and speed > 0){
-	can_damage = true;	
-}
-
-image_xscale = (charge * 1.15)  + 1;
-image_yscale = (charge * 1.05) + 1;
-
-if (charging == false and charge > 0){
-	charge -= 0.02;
-}
-
-if (charge > 0){
-	sprite_index = spr_player_charging;	
-}
-else if(alarm[0] == -1){
-	sprite_index = spr_player_idle;
-	can_charge = true;
-}
-
-if (keyboard_check_released(ord("X"))){
-	if (can_charge == true){
-		motion_add(image_angle, charge * 5)
-		charging = false;
-		can_charge = false;
-		
+//Makes sure player speed cannot go over max_spd
+if (can_damage == false){
+	if (speed > max_spd){
+		speed = max_spd;	
 	}
 }
+if (can_damage == true and charge <= 0){
+	can_damage = false;	
+	sprite_index = spr_player_idle;
+	charge = 0;
+	image_xscale = 1;
+	image_yscale = 1;
+}
+else if (can_damage == true and charge > 0){
+	charge -= .01;	
+}
+

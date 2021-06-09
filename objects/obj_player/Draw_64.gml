@@ -1,1 +1,1 @@
-draw_text(50, 50, string(alarm[0]))
+draw_text(50, 50, charge);
