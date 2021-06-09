@@ -1,0 +1,1 @@
+draw_text(150, 50, spawn_charge_pickup_chance);
