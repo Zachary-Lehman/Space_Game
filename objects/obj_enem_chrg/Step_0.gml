@@ -1,5 +1,6 @@
 if (speed > 0){
 	speed -= move_spd*0.01;
+	sprite_index = spr_enem_chrg_charging;
 }
 if (speed <= move_spd*0.1){
 	charging = false;	

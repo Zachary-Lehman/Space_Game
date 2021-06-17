@@ -1,3 +1,3 @@
 charging = false;
-move_spd = 20;
+move_spd = 15;
 alarm[0] = room_speed*5;

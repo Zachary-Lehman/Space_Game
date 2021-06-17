@@ -18,3 +18,4 @@ if(instance_number(obj_enemy) + instance_number(obj_enem_chrg) < 10){
 		instance_create_depth(x_rand, y_rand, 0, obj_enem_chrg);
 	}
 }
+alarm[1] = room_speed * 20;
