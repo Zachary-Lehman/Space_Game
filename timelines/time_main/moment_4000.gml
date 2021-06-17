@@ -1,1 +1,1 @@
-global.can_shoot_lazer = true;
+alarm[1] = room_speed * 20;
