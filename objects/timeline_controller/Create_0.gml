@@ -1,0 +1,12 @@
+spawn_enem_chance = 20;
+spawn_enem_chrg_chance = 10;
+spawn_charge_pickup_chance = 50;
+global.can_shoot_lazer = false;
+global.curr_score = 0;
+global.score_mult = 1;
+global.prox_score_mult = 1;
+alarm[0] = room_speed * 10;
+alarm[1] = room_speed * 20;
+timeline_index = time_main;
+timeline_position = 0;
+timeline_running = true;

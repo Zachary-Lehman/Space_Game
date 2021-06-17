@@ -1,1 +1,1 @@
-image_angle += 7;
+image_angle += rotation_spd;

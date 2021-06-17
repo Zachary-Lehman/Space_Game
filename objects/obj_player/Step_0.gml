@@ -1,6 +1,6 @@
 //Adds friction
 if (speed > 0){
-	speed -= thrust_spd * 0.4;
+	speed -= thrust_spd * 0.25;
 }
 
 //Allows for room wrapping
@@ -36,4 +36,21 @@ if (can_damage == true and charge <= 0){
 else if (can_damage == true and charge > 0){
 	charge -= .01;	
 }
+if (instance_number(obj_enemy) > 0){
+	if (x > instance_nearest(x, y, obj_enemy).x - 100 and x < instance_nearest(x, y, obj_enemy).x + 100 
+	and y > instance_nearest(x, y, obj_enemy).y - 100  and y < instance_nearest(x, y, obj_enemy).y + 100){
+		global.prox_score_mult = 2;
+	}
+	else {
+		global.prox_score_mult = 1;	
+	}
+}
 
+if (health <= 0){
+	global.player_dead = true;
+	instance_destroy(self);		
+}
+
+if (iframed == true){
+	sprite_index = spr_player_iframed;	
+}
